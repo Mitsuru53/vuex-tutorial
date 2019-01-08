@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import CounterEvent from '../CounterEvent';
 import TeamAPoints from './TeamAPoints.vue';
 
 export default {
@@ -28,6 +29,7 @@ export default {
   methods: {
     addOnePoint() {
       this.points += 1;
+      CounterEvent.$emit('AddCountToTotal');
     },
   },
 };

@@ -1,10 +1,23 @@
 <template>
   <div>
     <h2>total</h2>
-    <p>3</p>
+    <p>{{sum}}</p>
   </div>
 </template>
 
 <script>
-export default {};
+import CounterEvent from '../CounterEvent';
+
+export default {
+  data() {
+    return {
+      total: 0,
+    };
+  },
+  created() {
+    CounterEvent.$on('AddCountToTotal', () => {
+      this.total += 1;
+    });
+  },
+};
 </script>
