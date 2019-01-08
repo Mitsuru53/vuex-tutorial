@@ -1,9 +1,15 @@
 <template>
   <div id="app">
-    <AppHeader />
+    <AppHeader
+      :sum="sum"
+    />
     <div class="teamBox">
-      <TeamA />
-      <TeamB />
+      <TeamA
+        @addPointToTotal="addTotal"
+      />
+      <TeamB
+        @addPointToTotal="addTotal"
+      />
     </div>
   </div>
 </template>
@@ -14,6 +20,16 @@ import TeamA from './components/TeamA.vue';
 import TeamB from './components/TeamB.vue';
 
 export default {
+  data() {
+    return {
+      sum: 0,
+    };
+  },
+  methods: {
+    addTotal(point) {
+      this.sum += point;
+    },
+  },
   components: {
     AppHeader,
     TeamA,

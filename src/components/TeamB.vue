@@ -28,6 +28,7 @@ export default {
   methods: {
     addOnePoint() {
       this.points += 1;
+      this.$emit('addPointToTotal', 1);
     },
   },
 };
