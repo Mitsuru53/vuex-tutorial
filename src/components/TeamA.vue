@@ -1,12 +1,13 @@
 <template>
   <div>
     team A
-    <TeamAPoints
-      :points="points"
-    />
+    <!--<TeamAPoints-->
+      <!--:points="points"-->
+    <!--/>-->
+    <TeamAPoints />
     <button
       type="button"
-      @click="addOnePoint"
+      @click="addOnePointToA"
     >
       increase
     </button>
@@ -14,21 +15,23 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import TeamAPoints from './TeamAPoints.vue';
 
 export default {
-  data() {
-    return {
-      points: 0,
-    };
-  },
+  // data() {
+  //   return {
+  //     points: 0,
+  //   };
+  // },
   components: {
     TeamAPoints,
   },
   methods: {
-    addOnePoint() {
-      this.points += 1;
-    },
+    ...mapActions(['addOnePointToA']),
+    // addOnePoint() {
+    //   this.points += 1;
+    // },
   },
 };
 </script>

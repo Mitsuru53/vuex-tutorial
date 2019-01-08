@@ -1,10 +1,18 @@
 <template>
   <div>
     <h2>total</h2>
-    <p>3</p>
+    <p>{{totalPoints}}</p>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from 'vuex';
+
+export default {
+  computed: {
+    ...mapGetters([
+      'totalPoints',
+    ]),
+  },
+};
 </script>
