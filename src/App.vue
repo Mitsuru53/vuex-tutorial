@@ -1,14 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <AppHeader />
+    <div class="teamBox">
+      <TeamA />
+      <TeamB />
     </div>
-    <router-view/>
   </div>
 </template>
 
+<script>
+import AppHeader from './components/AppHeader.vue';
+import TeamA from './components/TeamA.vue';
+import TeamB from './components/TeamB.vue';
+
+export default {
+  components: {
+    AppHeader,
+    TeamA,
+    TeamB,
+  },
+};
+</script>
+
 <style lang="scss">
+.teamBox {
+  display: flex;
+  justify-content: center;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
